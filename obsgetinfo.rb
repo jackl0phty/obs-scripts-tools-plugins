@@ -13,6 +13,8 @@ second = `date '+%S'`
 version = '1.0.0'
 long_date_and_time = ''
 data_dir = `pwd`
+seconds = ''
+date1 = ''
 
 opt_parser = OptionParser.new do |opt|
   opt.banner = "Usage: chefknife COMMAND [OPTIONS]"
@@ -103,6 +105,19 @@ def get_long_date_and_time(long_date_and_time, month, day, year, hour, minute, s
 
 end
 
+def quitting_time_countdown_timmer(seconds, date1)
+
+  date1 = Time.new
+  date1 = Time.now
+  while Time.now < date1
+    t = Time.at(date1.to_i - Time.now.to_i)
+    p t.strftime('%H:%M:%S')
+    sleep 1
+    puts "#{t}"
+  end
+
+end
+
 # Define get_version().
 def get_version(version)
 
@@ -134,6 +149,9 @@ when "second"
 
 when "long_date_and_time"
   get_long_date_and_time(long_date_and_time, month, day, year, hour, minute, second, data_dir)
+
+when "quitting_time_timer"
+  quitting_time_countdown_timmer(seconds, date1)
 
 else
   puts opt_parser
