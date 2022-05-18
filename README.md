@@ -1,3 +1,5 @@
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/M4M3CQPLY)
+
 # obs-scripts-tools-plugins
 Various scripts, tools, &amp; plugins for OBS.
 
